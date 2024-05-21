@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <h2>Hello World</h2>
-    <p>{{ myvalue }}</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Index Page{% endblock %}
+
+{% block content %}
+
+    <h1>Hello World</h1>
+    <p> {{ mytime }} </p>
+
+    <a href="{{ url_for('other') }}">Other</a>
+
+{% endblock %}

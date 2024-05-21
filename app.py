@@ -1,11 +1,22 @@
 from flask import Flask, render_template
+import time
+import asyncio
+
 
 app = Flask(__name__, template_folder="templates")
+
 
 @app.route("/")
 def index():
     """Root"""
-    return render_template(template_name_or_list="index.html", myvalue="regex101")
+    now = time.monotonic()
+    return render_template(template_name_or_list="index.html", mytime=now)
+
+
+@app.route("/other")
+def other():
+    """other"""
+    return render_template(template_name_or_list="other.html")
 
 
 if __name__ == "__main__":
