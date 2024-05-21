@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import time
 import asyncio
 
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 
 @app.route("/")
@@ -13,10 +13,10 @@ def index():
     return render_template(template_name_or_list="index.html", mytime=now)
 
 
-@app.route("/other")
-def other():
-    """other"""
-    return render_template(template_name_or_list="other.html")
+@app.route("/crossword")
+def crossword():
+    """crossword"""
+    return render_template(template_name_or_list="crossword.html")
 
 
 if __name__ == "__main__":
